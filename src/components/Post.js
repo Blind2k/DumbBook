@@ -6,8 +6,8 @@ const Post = (props) => {
         <div className="wrap-post">
             {/* <img src={`https://robohash.org/${nickname}.png`} alt="profile picture"/> */}
             <div>
-               <h3>{props.nickname}</h3>
-               <h3>{props.privatename} {props.lastname}</h3>
+               {/* <h3>{props[1].nickname}</h3>
+               <h3>{props[1].privatename} {props[1].lastname}</h3> */}
             </div>
             <div>
                 {/* <p className="">{popup.posts[0].date}</p>
