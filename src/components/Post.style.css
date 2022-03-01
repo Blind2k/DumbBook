@@ -1,7 +1,49 @@
 .wrap-post {
-    border: 3px solid var(--font-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  border: 3px solid var(--font-color);
+  display: flex;
+  border-radius: 40px;
+  max-height: 1fr;
 }
+
+.wrap-post:hover {
+  box-shadow: inset -10px 0 0;
+}
+
+.text-group {
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  margin: 8px 8px;
+}
+
+#small-profile {
+  width: 10em;
+  height: 10em;
+  border-radius: 80px;
+  background-color: var(--font-color);
+}
+#small-profile:hover {
+  width: 10em;
+  height: 10em;
+  border-radius: 80px;
+  background-color: var(--font-color);
+}
+.id {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  font-size: 1.2rem;
+}
+.body {
+  font-size: 1rem;
+}
+
+/* .comment-box {
+    position: relative;
+	width: 30rem;
+	height: 15rem;
+	perspective: 150rem;
+} */

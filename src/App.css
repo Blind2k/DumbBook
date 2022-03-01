@@ -10,6 +10,9 @@
   --link-color: lightblue;
 }
 
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 body {
   color: var(--font-color);
   background-color: var(--background-color);

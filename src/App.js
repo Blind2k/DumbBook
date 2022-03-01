@@ -1,34 +1,74 @@
-import { Component } from 'react';
-import './App.css';
-import Navigation from "./components/Navigation.js"
-import Post from "./components/Post.js"
+import { Component } from "react";
+import "./App.css";
+import Navigation from "./components/Navigation.js";
+import PostsLog from "./components/PostsLog.js";
+import UserProfile from "./components/UserProfile.js";
 
-
-
+const POST_ENDPOINT = "https://jsonplaceholder.typicode.com/posts";
+const USER_ENDPOINT = "https://jsonplaceholder.typicode.com/users";
 
 class App extends Component {
   constructor() {
     super();
-    this.userslist = []
+    this.state = {
+      postsList: [],
+      usersList: [],
+    };
   }
 
-  componentDidMount() {
-    fetch("https://dumb-book-default-rtdb.europe-west1.firebasedatabase.app/users.json")
-    .then(response => response.json())
-    .then(users => this.userslist.push(users))
-    // .then(data => console.log(data))
-    .catch(error => console.log(error))
+  async componentDidMount() {
+    try {
+      const response = await fetch(POST_ENDPOINT);
+      const data = await response.json();
+      this.setState({ postsList: data });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  render () {
-    console.log(this.userslist)
+  // async componentDidMount() {
+  //   try {
+  //     const response = await fetch(USER_ENDPOINT);
+  //     const data = await response.json()
+  //     this.setState({usersList: data})
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+  render() {
+    const {postsList, usersList } = this.state
     return (
       <div className="app">
-        <Navigation/>
-        <Post userslist={this.userslist}/>
+        <Navigation />
+        <PostsLog 
+          postsList={postsList} 
+          // usersList={usersList}
+        />
+        {/* {this.showUser.searchUser && <UserProfile usersList={this.usersList}/>} */}
       </div>
     );
   }
 }
 
 export default App;
+
+// componentDidMount() {
+//   fetch(POST_ENDPOINT)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       this.setState({ postsList: data });
+//     })
+//     .catch(error => console.log(error))
+// }
+
+// async componentDidMount() {
+//   try {
+//     const response = await fetch(POST_ENDPOINT)
+//     const data = await response.json()
+//     console.log(data)
+//     this.setState({ postsList: data})
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }

@@ -1,6 +1,6 @@
 {
   "users": {
-    "1": {
+    "user1": {
       "id": "1",
       "privatename": "Dave",
       "lastname": "Douh",
@@ -42,7 +42,7 @@
         ]
       }
     },
-    "2": {
+    "user2": {
       "id": "2",
       "privatename": "Fin",
       "lastname": "Max",
@@ -84,7 +84,7 @@
         ]
       }
     },
-    "3": {
+    "user3": {
       "id": "3",
       "privatename": "Flex",
       "lastname": "Dax",
@@ -126,7 +126,7 @@
         ]
       }
     },
-    "4": {
+    "user4": {
       "id": "2",
       "privatename": "Gil",
       "lastname": "Weaver",
