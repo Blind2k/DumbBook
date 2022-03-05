@@ -22,7 +22,7 @@ class App extends Component {
       const data = await response.json();
       this.setState({ postsList: data });
     } catch (error) {
-      console.log(error);
+      console.log("posts" +error);
     }
   }
 
@@ -32,9 +32,10 @@ class App extends Component {
   //     const data = await response.json()
   //     this.setState({usersList: data})
   //   } catch (error) {
-  //     console.log(error)
+  //     console.log("users" + error)
   //   }
   // }
+
   render() {
     const {postsList, usersList } = this.state
     return (
@@ -51,6 +52,9 @@ class App extends Component {
 }
 
 export default App;
+
+
+
 
 // componentDidMount() {
 //   fetch(POST_ENDPOINT)
