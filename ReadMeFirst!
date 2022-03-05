@@ -9,14 +9,14 @@ V the feed should have the url path of "/app/feed"
 V the feed page should use class components logic 
 - on clicking on a user name/icon the user should be redirected to a "user page", where the name, email, username and address is being shown.
 - this user page should have the path url of "/app/user/<userId>"
-- the user page should use functional/ compnents/hooks logic
+V the user page should use functional/ compnents/hooks logic
 
 *optional (and hard!): use the /comments endpoints, so that when the user clicks on a post, it expands and shows all comments below (with commenter name and comment)
 
 *please note - there's a newer version (v6) for react router dom, you should use v5 though!
 
-DumbBook
-A parody about Facebook dummy social network page with designated url's using react router dom.
+TITLE: DumbBook
+DESCRIPTION: A parody about Facebook dummy social network page with designated url's using react router dom.
 
 Q:"Using the /users and /posts endpoints" what doesthat means? A: Endpoint refers to an "API Endpoint", so an address, that when making a call to (using fetch/axios or any ither method) will return a status and some form of content
 
@@ -24,7 +24,6 @@ Q:"component is responsible of fetching and storing the user information" A: You
 
 class component + => main page? /comments => in which page?
 
-*react router dom v5!
 
 //non main =(loggin)> MAIN //MAIN => url:"/app/feed" fetch list lists of posts //CARD-Post name+icon title body => url:"/post/" //User-Page= i) "/app/user/" ii)fuctional component iii)name, email, username and address
 

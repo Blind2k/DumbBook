@@ -3,6 +3,7 @@
   display: flex;
   border-radius: 40px;
   max-height: 1fr;
+  flex-direction: column;
 }
 
 .wrap-post:hover {
@@ -12,8 +13,7 @@
 .text-group {
   padding: 8px 8px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 0;
   margin: 8px 8px;
 }
@@ -24,6 +24,7 @@
   border-radius: 80px;
   background-color: var(--font-color);
 }
+
 #small-profile:hover {
   width: 10em;
   height: 10em;

@@ -1,5 +1,5 @@
-import Logo from "./Logo"
-import DarkModeToggler from "../DarkMode/DarkModeToggler"
+import Logo from "./Logo";
+import DarkModeToggler from "./DarkMode/DarkModeToggler"
 import "./Navigation.style.css"
 
 const Navigation = () => {
