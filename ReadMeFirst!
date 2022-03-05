@@ -1,3 +1,20 @@
+Your task is to use json placeholder to create a dummy social network page with designated url's using react router dom.
+
+Using the /users and /posts endpoints, show a list of posts on the main page. 
+ the flow should be as follows:
+V. in the main page, fetch the list of posts.
+V. render the list of posts (each post can be some kind of card component), where each post component is responsible of fetching and storing the user information.
+X. each post should show the name of the user whos e post it belongs to, next to some kind of generic user icon. beneath should be the title of the post and underneath the body.
+V the feed should have the url path of "/app/feed"
+V the feed page should use class components logic 
+- on clicking on a user name/icon the user should be redirected to a "user page", where the name, email, username and address is being shown.
+- this user page should have the path url of "/app/user/<userId>"
+- the user page should use functional/ compnents/hooks logic
+
+*optional (and hard!): use the /comments endpoints, so that when the user clicks on a post, it expands and shows all comments below (with commenter name and comment)
+
+*please note - there's a newer version (v6) for react router dom, you should use v5 though!
+
 DumbBook
 A parody about Facebook dummy social network page with designated url's using react router dom.
 
@@ -16,3 +33,16 @@ LINKS
 https://jsonplaceholder.typicode.com/
 https://v5.reactrouter.com/web/guides/quick-start
 https://robohash.org/
+
+
+//MAIN
+  fetch list
+  lists of posts
+    //CARD-Post
+           name+icon
+           title
+           body 
+  //User-Page= 
+  i) "/app/user/<userId>"
+  ii)fuctional component
+  iii)name, email, username and address 
