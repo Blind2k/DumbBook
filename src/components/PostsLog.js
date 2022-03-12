@@ -1,8 +1,9 @@
 import Post from "./Post";
 import "./PostsLog.style.css";
 
-const PostsLog = ({ postsList }) => {
+const PostsLog = ({ postsList, usersList }) => {
 
+  
   const mappedPosts = postsList.map((post, i) => {
     return (
       <Post
