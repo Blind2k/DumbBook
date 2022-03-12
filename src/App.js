@@ -1,86 +1,69 @@
 import { Component } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
+
 import Navigation from "./components/header/Navigation";
-import PostsLog from "./components/PostsLog";
-// import UserProfile from "./pages/UserProfile";
+import PostsLog from "./components/Posts/PostsLog";
+
+import UserProfileCollection from "./pages/UserProfileCollection";
+import UserProfilePage from "./pages/UserProfilePage";
 
 const POST_ENDPOINT = "https://jsonplaceholder.typicode.com/posts";
 const USER_ENDPOINT = "https://jsonplaceholder.typicode.com/users";
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      userAndPosts: [],
+      exUsersArray: [],
+      exPostsArray: [],
     };
   }
-  //Comment Fetch
+
   async componentDidMount() {
-    //  Comment fetch
     try {
       const responseUser = await fetch(USER_ENDPOINT);
       const responsePost = await fetch(POST_ENDPOINT);
-      const dataUser = await responseUser.json();
-      const dataPost = await responsePost.json();
-      
-      // var res = [];
-      // for(let d1 of dataUser){
-      // res.push({...d1,...dataPost.find(d2=>d2.userId==d1.id)})
-      // console.log(res)
-    // }
-    let res = dataUser.map((item, i) => Object.assign({}, item, dataPost[i]));
-
-      
-      console.log(res)
-      this.setState({userAndPosts: res})
-      // this.setState({ postsList: dataPost });
-      // this.setState({ usersList: dataUser });
+      const dataResponseUser = await responseUser.json();
+      const dataResponsePost = await responsePost.json();
+      this.setState({ exUsersArray: dataResponseUser });
+      this.setState({ exPostsArray: dataResponsePost });
     } catch (error) {
       console.log(error);
     }
   }
   render() {
+    const { exUsersArray, exPostsArray } = this.state;
     return (
       <div className="app">
         <Navigation />
-        <Switch>
-          <Route path="/" exact>
-            <Redirect to="/feed"/>
-          </Route>
-          <Route path="/feed">
-            {/* <PostsLog/> */}
-          </Route>
-          <Route path="/user">
-            {/* <UserProfile usersList={searchedUser[0]}/> */}
-          </Route>
-          <Route path="/"></Route>
-        </Switch>
+        <main>
+          <Switch>
+            {/* REROUTES */}
+            <Route path="/" exact>
+              <Redirect to="/feed" />
+            </Route>
+            <Route path="/users" exact>
+              <Redirect to="/user" />
+            </Route>
+
+            {/* REAL ROUTES */}
+            <Route path="/feed">
+              <PostsLog usersInfo={exUsersArray} usersPosts={exPostsArray} />
+            </Route>
+            <Route path="/user" exact>
+              <UserProfileCollection usersInfo={exUsersArray} />
+            </Route>
+
+            {/* DYNAMIC ROUTES */}
+            <Route path="/user/:userId">
+              <UserProfilePage  usersInfo={exUsersArray}/>
+            </Route>
+          </Switch>
+        </main>
       </div>
     );
   }
 }
 
 export default App;
-
-// componentDidMount() {
-//   fetch(POST_ENDPOINT)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       this.setState({ postsList: data });
-//     })
-//     .catch(error => console.log(error))
-// }
-
-// async componentDidMount() {
-//   try {
-//     const response = await fetch(POST_ENDPOINT)
-//     const data = await response.json()
-//     console.log(data)
-//     this.setState({ postsList: data})
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
