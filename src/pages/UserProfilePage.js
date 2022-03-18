@@ -1,14 +1,18 @@
-import { Fragment } from "react";
 import { useParams } from "react-router-dom"
 import UserProfileComponent from "../components/UserProfileComponent";
 
 const UserProfilePage = ({usersInfo}) => {
     const params = useParams();
-    const findTheUserParams = usersInfo.find(user => user.id == params.userId)
+    const foundUser = usersInfo.find((user) => Number(user.id) === Number(params.userId))
+    console.log("found user  ", foundUser);
+    // console.log(usersInfo);
+    console.log(params, " is params");
+    
     return(
-        <Fragment>
-            <UserProfileComponent userProfile={findTheUserParams} />
-        </Fragment>
+        <div>
+            <UserProfileComponent userProfile={foundUser}/>
+            <p>Yo YO</p>
+        </div>
     )
 }
 

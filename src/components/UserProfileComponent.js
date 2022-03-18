@@ -1,5 +1,5 @@
 const UserProfileComponent = ({userProfile}) => {
-  console.log(userProfile)
+console.log(userProfile)
 
   return (
     <div className="text-group">
@@ -9,26 +9,26 @@ const UserProfileComponent = ({userProfile}) => {
           {userProfile.id}
         </p>
         {/* <img
-          src={`https://robohash.org/${props.userProfile.Id}.png`}
+          src={`https://robohash.org/${userProfile.Id}.png`}
           id="small-profile"
           alt="user profile in circle"
-        /> */}
-        {/* <p><u><strong>ID</strong></u> : {props.userProfile.id}</p> */}
-        {/* <p>Name: {props.userProfile.name}</p> */}
-        {/* <p>@{props.userProfile.username}</p> */}
-        {/* <p>Email: {props.userProfile.email}</p> */}
+        />
+        <p><u><strong>ID</strong></u> : {userProfile.id}</p>
+        <p>Name: {userProfile.name}</p>
+        <p>@{userProfile.username}</p>
+        <p>Email: {userProfile.email}</p>
         <p>
-          {/* {props.userProfile.address.street} {props.userProfile.address.suite}<br/> */}
-          {/* {props.userProfile.address.zipcode} {props.userProfile.address.city} */}
+          {userProfile.address.street} {userProfile.address.suite}<br/>
+          {userProfile.address.zipcode} {userProfile.address.city}
         </p>
         <p>Global position</p>
-        {/* <p>{props.userProfile.address.geo.lat}, {props.userProfile.address.geo.lang}</p> */}
-        {/* <p>{props.userProfile.phone}</p> */}
-        {/* <p>{props.userProfile.website}</p> */}
+        <p>{userProfile.address.geo.lat}, {userProfile.address.geo.lang}</p>
+        <p>{userProfile.phone}</p>
+        <p>{userProfile.website}</p>
         <p>Company</p>
-        {/* <p>{props.userProfile.company.name}</p> */}
-        {/* <p>{props.userProfile.company.catchPhrase}</p> */}
-        {/* <p>{props.userProfile.company.bs}</p> */}
+        <p>{userProfile.company.name}</p>
+        <p>{userProfile.company.catchPhrase}</p>
+        <p>{userProfile.company.bs}</p> */}
       </div>
     </div>
   );

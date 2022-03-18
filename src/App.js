@@ -34,6 +34,7 @@ class App extends Component {
   }
   render() {
     const { exUsersArray, exPostsArray } = this.state;
+    console.log(exUsersArray);
     return (
       <div className="app">
         <Navigation />
@@ -57,7 +58,7 @@ class App extends Component {
 
             {/* DYNAMIC ROUTES */}
             <Route path="/user/:userId">
-              <UserProfilePage  usersInfo={exUsersArray}/>
+              <UserProfilePage usersInfo={exUsersArray} />
             </Route>
           </Switch>
         </main>
