@@ -17,19 +17,25 @@ class App extends Component {
     this.state = {
       exUsersArray: [],
       exPostsArray: [],
+      successLoading: false,
     };
   }
 
   async componentDidMount() {
     try {
+      // USER INFO IMPORT
       const responseUser = await fetch(USER_ENDPOINT);
-      const responsePost = await fetch(POST_ENDPOINT);
       const dataResponseUser = await responseUser.json();
-      const dataResponsePost = await responsePost.json();
       this.setState({ exUsersArray: dataResponseUser });
+      // POST INFO IMPORT
+      const responsePost = await fetch(POST_ENDPOINT);
+      const dataResponsePost = await responsePost.json();
       this.setState({ exPostsArray: dataResponsePost });
+
+      this.state.successLoading = true;
     } catch (error) {
       console.log(error);
+      this.state.successLoading = false;
     }
   }
   render() {

@@ -1,14 +1,14 @@
 const UserProfileComponent = ({userProfile}) => {
-console.log(userProfile)
-
+  if (!userProfile) {
+    return <p>Loading...</p>
+  }
   return (
     <div className="text-group">
         <div className="wrap-post">
         <p>
           <strong>Info</strong>
-          {userProfile.id}
         </p>
-        {/* <img
+        <img
           src={`https://robohash.org/${userProfile.Id}.png`}
           id="small-profile"
           alt="user profile in circle"
@@ -28,7 +28,7 @@ console.log(userProfile)
         <p>Company</p>
         <p>{userProfile.company.name}</p>
         <p>{userProfile.company.catchPhrase}</p>
-        <p>{userProfile.company.bs}</p> */}
+        <p>{userProfile.company.bs}</p>
       </div>
     </div>
   );
